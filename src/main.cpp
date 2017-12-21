@@ -2524,21 +2524,6 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.hashMerkleRoot == %s\n", block.hashMerkleRoot.ToString().c_str());
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
-        //printf("=============================\n");
-        if (false && block.GetHash() != hashGenesisBlock)
-
-        {
-          printf("=============================");
-          printf("genesis.nTime = %u \n", block.nTime);
-          printf("genesis.nNonce = %u \n", block.nNonce);
-          printf("genesis.nVersion = %u \n", block.nVersion);
-          printf("genesis.GetHash = %s \n", block.GetHash().ToString().c_str());
-          //   string str = block.GetHash().ToString().c_str();
-
-          printf("genesis.hashMerkleRoot = %s \n", block.hashMerkleRoot.ToString().c_str());
-          printf("=============================\n");
-          // string str2 =  block.hashMerkleRoot.ToString().c_str();
-        }
 
         //// debug print
         assert(block.hashMerkleRoot == uint256("0xbd4f53f89f297533a19fcacbdba606545ed9a15f6ab6f56cfcc981fcbc39ec6f"));

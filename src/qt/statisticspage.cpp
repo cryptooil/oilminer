@@ -16,9 +16,9 @@ StatisticsPage::StatisticsPage(QWidget *parent) :
     ui(new Ui::StatisticsPage)
 {
     ui->setupUi(this);
-    
+
     setFixedSize(400, 420);
-    
+
     connect(ui->startButton, SIGNAL(pressed()), this, SLOT(updateStatistics()));
 }
 
@@ -53,7 +53,7 @@ void StatisticsPage::updateStatistics()
     QString phase = "";
     if (pindexBest->nHeight < 5000)
     {
-        phase = "X15 POW (POS Starts Block 5000)";
+        phase = "X15 POW (POS Starts Block 1000)";
     }
     else if (pindexBest->nHeight > 5000)
     {
@@ -61,22 +61,15 @@ void StatisticsPage::updateStatistics()
     }
 
     QString subsidy = "";
-	if(pindexBest->nHeight < 2)
+	if(pindexBest->nHeight == 1)
     {
-		subsidy = "7500 OILM";
+		subsidy = "375000 OILM";
     }
-	else if(pindexBest->nHeight < 2000)
+	else if(pindexBest->nHeight < 1000)
     {
-		subsidy = "50 OILM";
+		subsidy = "375 OILM";
     }
-		else if(pindexBest->nHeight < 4000)
-    {
-		subsidy = "200 OILM";
-    }
-		else if(pindexBest->nHeight < 5000)
-    {
-		subsidy = "100 OILM";
-    }
+
     QString hardness = QString::number(pHardness, 'f', 6);
     QString hardness2 = QString::number(pHardness2, 'f', 6);
     QString pawrate = QString::number(pPawrate2, 'f', 3);
@@ -111,21 +104,21 @@ void StatisticsPage::updateStatistics()
     } else {
     ui->cBox->setText(phase);
     }
-    
+
     if(subsidy != rewardPrevious)
     {
         ui->rewardBox->setText("<b><font color=\"green\">" + subsidy + "</font></b>");
     } else {
     ui->rewardBox->setText(subsidy);
     }
-    
+
     if(pHardness > hardnessPrevious)
     {
-        ui->diffBox->setText("<b><font color=\"green\">" + hardness + "</font></b>");        
+        ui->diffBox->setText("<b><font color=\"green\">" + hardness + "</font></b>");
     } else if(pHardness < hardnessPrevious) {
         ui->diffBox->setText("<b><font color=\"red\">" + hardness + "</font></b>");
     } else {
-        ui->diffBox->setText(hardness);        
+        ui->diffBox->setText(hardness);
     }
 
     if(pHardness2 > hardnessPrevious2)
@@ -136,7 +129,7 @@ void StatisticsPage::updateStatistics()
     } else {
         ui->diffBox2->setText(hardness2);
     }
-    
+
     if(pPawrate2 > netPawratePrevious)
     {
         ui->pawrateBox->setText("<b><font color=\"green\">" + pawrate + " MH/s</font></b>");
@@ -152,14 +145,14 @@ void StatisticsPage::updateStatistics()
     } else {
     ui->localBox->setText(Qlpawrate);
     }
-    
+
     if(peers > connectionPrevious)
     {
-        ui->connectionBox->setText("<b><font color=\"green\">" + QPeers + "</font></b>");             
+        ui->connectionBox->setText("<b><font color=\"green\">" + QPeers + "</font></b>");
     } else if(peers < connectionPrevious) {
-        ui->connectionBox->setText("<b><font color=\"red\">" + QPeers + "</font></b>");        
+        ui->connectionBox->setText("<b><font color=\"red\">" + QPeers + "</font></b>");
     } else {
-        ui->connectionBox->setText(QPeers);  
+        ui->connectionBox->setText(QPeers);
     }
 
     if(volume > volumePrevious)
