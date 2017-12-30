@@ -40,7 +40,7 @@ CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 
 unsigned int nTargetSpacing = 15 * 60; // 15 min
 unsigned int nStakeMinAge = 60 * 60 * 24 * 1; // 24 hour
-unsigned int nStakeMaxAge = -1;           //unlimited
+unsigned int nStakeMaxAge = -1;            //unlimited
 unsigned int nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
 
 int nCoinbaseMaturity = 60;
@@ -66,7 +66,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "oilminer Signed Message:\n";
+const string strMessageMagic = "OILMiner Signed Message:\n";
 
 // Settings
 int64_t nTransactionFee = MIN_TX_FEE;
@@ -997,7 +997,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan = 16 * 60;  // 16 mins
+static const int64_t nTargetTimespan = 1 * 24 * 60 * 60;  // 16 mins
 //
 // maximum nBits value could possible be required nTime after
 //

@@ -3014,7 +3014,7 @@ Het wordt aanbevolen de volgende willekeurig wachtwoord gebruiken:
 rpcuser = hackcoinrpc 
 rpcpassword = %s 
 (je hoeft niet dit wachtwoord te onthouden) 
-De gebruikersnaam en het wachtwoord MAG NIET hetzelfde zijn. 
+De gebruikersnaam en het wachtwoord OILM NIET hetzelfde zijn. 
 Als het bestand niet bestaat, maakt u met leesbare-alleen-eigenaar bestandsbeheermachtigingen.  
 Het wordt ook aanbevolen om alertnotify instellen zodat u een melding van problemen;  
 bijvoorbeeld: alertnotify = echo %%s | mail -s &quot;hackcoin Alert&quot; admin@foo.com </translation>
